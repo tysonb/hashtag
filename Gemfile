@@ -7,6 +7,10 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+group :development, :test do
+  gem 'rspec-rails', '2.11.0'
+  gem 'capybara', '1.1.4'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
