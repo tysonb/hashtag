@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'sqlite3'
 gem 'high_voltage'
+gem 'twitter'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

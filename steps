@@ -37,4 +37,22 @@ rspec spec/integration/view_homepage_spec.rb
 vim app/views/pages/homepage.html.erb
   - add data-role css element
 
-6:24
+vim spec/integration/search_twitter_spec.rb (run spec)
+add search form to homepage
+add route 'searches#create'
+vim app/controllers/searches_controller
+  - add create action, then add redirect
+vim config/routes
+  - add show action to searches
+mkdir app/views/searches
+touch app/views/searches/show.html.erb`
+add li to searches show view
+
+vim Gemfile
+  - add dotenv-rails(dev and test groups only) and twitter gems
+vim .env
+  - add twitter keys and tokens
+mkdir app/services
+vim app/service/twitter_client.rb
+
+18.24
