@@ -63,11 +63,18 @@ vim .env
 mkdir app/services
 vim app/service/twitter_client.rb
 
-* * *
+* * * TWEET CONTENT
 
 vim spec/integration/search_twitter_spec.rb
   - add spec for tweet content
 rake db:migrate
 rake
+
+* * * REFACTOR TWITTER SEARCH
+
+mkdir spec/models
+vim spec/models/searcher_spec.rb (run spec)
+vim app/models/searcher.rb
+refactor searches#show to use Searcher (run specs)
 
 22:50
