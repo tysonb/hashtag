@@ -4,11 +4,13 @@ cd hashtag
 rvm use --ruby-version 1.9.3@hashtag --create
 rm public/index.html
 
-git init
-git remote add origin git@github.com:tysonb/hashtag.git 
-git add .
-git commit -m 'initial commit'
-git push -u origin master
+  git init
+  git remote add origin git@github.com:tysonb/hashtag.git 
+  git add .
+  git commit -m 'initial commit'
+  git push -u origin master
+
+* * * RSPEC/CAPYBARA
 
 vim Gemfile
   - add rspec-rails 2.11.0 to group development and test
@@ -16,32 +18,38 @@ vim Gemfile
 bundle
 rails g rspec:install
 
-git add .
-git commit -m 'fire up rspec'
-git push
+  git add .
+  git commit -m 'fire up rspec'
+  git push
+
+* * * HOMEPAGE
+
+vim Gemfile
+  - add high_voltage
+bundle
 
 mkdir spec/integration
 vim spec/integration/view_homepage_spec.rb
   - add feature and scenario
 rspec spec/integration/view_homepage_spec.rb
 
-vim Gemfile
-  - add high_voltage
-bundle
-
 vim config/routes.rb
   - add root path to homepage using high_voltage
+mkdir app/views/pages
 touch app/views/pages/homepage.html.erb
 
 rspec spec/integration/view_homepage_spec.rb
 vim app/views/pages/homepage.html.erb
   - add data-role css element
 
+* * * SEARCH
+
 vim spec/integration/search_twitter_spec.rb (run spec)
 add search form to homepage
 add route 'searches#create'
 vim app/controllers/searches_controller
   - add create action, then add redirect
+
 vim config/routes
   - add show action to searches
 mkdir app/views/searches
@@ -55,4 +63,10 @@ vim .env
 mkdir app/services
 vim app/service/twitter_client.rb
 
+* * *
+
+vim spec/integration/search_twitter_spec.rb
+  - add spec for tweet content
+rake db:migrate
+rake
 18.24
