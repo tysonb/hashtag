@@ -69,4 +69,5 @@ vim spec/integration/search_twitter_spec.rb
   - add spec for tweet content
 rake db:migrate
 rake
-18.24
+
+22:50
