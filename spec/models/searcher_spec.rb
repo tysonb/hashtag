@@ -6,3 +6,6 @@ describe Searcher, '#results' do
     expect(searcher.results.count).to eq 15
   end
 end
+
+describe Searcher, 'using a custom searcher' do
+end

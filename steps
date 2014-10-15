@@ -77,4 +77,16 @@ vim spec/models/searcher_spec.rb (run spec)
 vim app/models/searcher.rb
 refactor searches#show to use Searcher (run specs)
 
-22:50
+* * * FAKE TWITTER
+
+mkdir spec/lib
+vim spec/lib/fake_twitter_spec.rb
+  - spec FakeTwitter.search
+vim lib/fake_twitter.rb
+vim config/application.rb
+  - autoload lib dir:
+  config.autoload_paths += %W(#{config.root}/lib)
+vim spec/models/searcher_spec.rb
+  - spec Searcher 'using a custom searcher'
+
+0:00 Mocks, Stubs and Spies
