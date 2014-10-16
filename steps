@@ -1,3 +1,5 @@
+- - - Interacting with 3rd Party Services - - -
+
 rvm use 1.9.3-p194@hashtag --create
 rails new hashtag --skip-test-unit
 cd hashtag
@@ -89,4 +91,13 @@ vim config/application.rb
 vim spec/models/searcher_spec.rb
   - spec Searcher 'using a custom searcher'
 
-0:00 Mocks, Stubs and Spies
+- - - Mocks, Stubs and Spies - - -
+
+vim Gemfile
+  - add gem bourne 1.2.1 (in test group)
+bundle
+vim spec/spec_helper.rb
+  - mock with mocha (uncomment config line)
+vim spec/models/searcher_spec.rb
+mkdir spec/support
+vim spec/support/searcher.rb

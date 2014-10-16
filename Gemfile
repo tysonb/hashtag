@@ -12,6 +12,10 @@ group :development, :test do
   gem 'capybara', '1.1.4'
 end
 
+group :test do
+  gem 'bourne', '1.2.1'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

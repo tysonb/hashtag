@@ -3,9 +3,17 @@ require 'spec_helper'
 describe Searcher, '#results' do
   it 'returns results from a twitter search' do
     searcher = Searcher.new('awesome search')
-    expect(searcher.results.count).to eq 15
+    expect(searcher.results.count).not_to eq 0
   end
 end
 
 describe Searcher, 'using a custom searcher' do
+  it 'invoking search returns results from the searcher passed' do
+    search_results = stub('search results', results: [1,2,3])
+    fake_searcher = stub('fake searcher', search: [1,2,3])
+    Searcher.searcher = fake_searcher
+
+    searcher = Searcher.new('term')
+    expect(searcher.results).to eq search_results.results
+  end
 end

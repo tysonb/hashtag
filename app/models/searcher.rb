@@ -1,7 +1,9 @@
 class Searcher
+  class_attribute :searcher
+  self.searcher = TwitterClient
   attr_reader :results
 
   def initialize(search_term)
-    @results = TwitterClient.new.search(search_term).take(15)
+    @results = searcher.search(search_term)
   end
 end
